@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start; /* 遊戲區域靠左 */
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h1, #themeSelector, #gridSizeSelector, #countdownSelector, #hideCompleted, #startButton {
+    margin-bottom: 10px; /* 在控制元素之間添加間距 */
+}
+
+#controls {
+    display: flex;
+    flex-direction: column; /* 將控制元素垂直排列 */
+    margin-right: 40px; /* 讓遊戲區域與左側控制區域之間有一定距離 */
+}
+
+.container {
+    display: grid;
+    grid-gap: 10px;
+}
+
+#gameInfo {
+    margin-left: 40px; /* 紀錄區與遊戲區保持距離 */
+}
+
+.card {
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-front {
+    background-color: gray;
+    color: lightblue;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background-color: plum;
+}
+
+.card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
